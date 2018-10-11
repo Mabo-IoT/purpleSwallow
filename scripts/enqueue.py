@@ -33,6 +33,35 @@ import redis
   }
 }
 
+
+msg = {
+        type: "value"
+        "@timestamp":datetime_str,
+        "data":{
+            "time":int(time.time()),
+            "measurement":measurement,
+            "fields":fields,
+            "tags":tags
+        },
+        "time_unit":"s",
+        "source":"test",
+        "ziyan":{"version":"0.2","hostname":host_name, "hostIP":host_ip}
+    } 
+
+msg = {
+        type: "heartbeat"
+        "@timestamp":datetime_str,
+        "data":{
+            "time":int(time.time()),
+            "measurement":measurement,
+            "fields":fields,
+            "tags":tags
+        },
+        "time_unit":"s",
+        "source":"test",
+        "ziyan":{"version":"0.2","hostname":host_name, "hostIP":host_ip}
+    } 
+
 """
 
 def test():
